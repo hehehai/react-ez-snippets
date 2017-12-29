@@ -1,24 +1,22 @@
 {
-  "name": "ReactSnippets",
+  "name": "react-ez-cnippets",
   "description": "Code snippets for Reactjs development in ES6 syntax",
-  "version": "1.7.0",
-  "displayName": "Reactjs code snippets",
-  "publisher": "xabikos",
-  "icon": "images/react.png",
+  "version": "1.0.0",
+  "displayName": "React ez snippets",
+  "publisher": "GuanWei",
+  "icon": "./react-ez.png",
   "galleryBanner": {
     "theme": "light"
   },
   "license": "SEE LICENSE IN LICENSE.md",
   "repository": {
     "type": "git",
-    "url": "https://github.com/xabikos/vscode-react"
+    "url": "https://github.com/hehehai/react-ez-snippets"
   },
   "engines": {
     "vscode": "0.10.x"
   },
-  "categories": [
-    "Snippets"
-  ],
+  "categories": ["Snippets"],
   "contributes": {
     "snippets": [
       {
@@ -27,14 +25,6 @@
       },
       {
         "language": "javascript",
-        "path": "./snippets/snippets.json"
-      },
-      {
-        "language": "typescript",
-        "path": "./snippets/snippets.json"
-      },
-      {
-        "language": "typescriptreact",
         "path": "./snippets/snippets.json"
       },
       {
