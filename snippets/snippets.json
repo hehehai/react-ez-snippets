@@ -2,7 +2,7 @@
   "import React": {
     "prefix": "ir",
     "body": ["import React from 'react'", ""],
-    "description": "import react"
+    "description": "import React"
   },
   "import React and Component": {
     "prefix": "irc",
