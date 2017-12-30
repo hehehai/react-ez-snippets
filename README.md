@@ -1,5 +1,7 @@
 # VS Code Reactjs easy snippets
 
+![react class component](./images/rcc.png)
+
 ## Installation
 
 In order to install an extension you need to launch the Command Pallete
@@ -39,7 +41,8 @@ Below is a list of all available snippets and the triggers of each one. The
 |  `cdc→` | class `componentDidCatch`                      |                        |
 |   `cp→` | class `this.props`                             |                        |
 |   `cs→` | class `this.state`                             |                        |
-|  `css→` | class `this.setState`                          |                        |
+|  `cso→` | class `this.setState` object                   | o = object             |
+|  `csf→` | class `this.setState` function                 | f = function           |
 |  `cds→` | class default `state`                          |                        |
 |  `cdp→` | class `static defaultProps`                    |                        |
 |   `ch→` | class handler `arrow function`                 | h = handler            |

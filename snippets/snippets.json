@@ -117,12 +117,17 @@
     "body": ["this.state"],
     "description": "class this.state"
   },
-  "class this.setState": {
-    "prefix": "css",
+  "class this.setState object": {
+    "prefix": "cso",
+    "body": ["this.setState({$2}${1:, () => ()})"],
+    "description": "object"
+  },
+  "class this.setState function": {
+    "prefix": "csf",
     "body": [
-      "this.setState(${3:(${5:prevState}${4:, props}) => ($6)}${1:, () => ($2)})"
+      "this.setState(${2:(${4:prevState}${3:, props}) => ($5)}${1:, () => ()})"
     ],
-    "description": "class this.setState"
+    "description": "class this.setState function"
   },
   "class default state": {
     "prefix": "cds",
