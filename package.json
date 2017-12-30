@@ -4,7 +4,7 @@
   "version": "1.0.1",
   "displayName": "React ez snippets",
   "publisher": "hehehai",
-  "icon": "./images/react.png",
+  "icon": "images/react.png",
   "galleryBanner": {
     "theme": "light"
   },
