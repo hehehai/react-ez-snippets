@@ -14,16 +14,134 @@
     "body": ["import React, { PureComponent } from 'react'", ""],
     "description": "import React and PureComponent"
   },
-  "react less component": {
+  "react function component": {
     "prefix": "rfc",
     "body": [
       "import React from 'react'",
       "",
       "const ${1:${TM_FILENAME_BASE}} = () => $2",
       "",
-      "export default ${1:${TM_FILENAME_BASE}}",
+      "export default $1",
       ""
     ],
-    "description": "react less component"
+    "description": "react function component"
+  },
+  "react class component": {
+    "prefix": "rcc",
+    "body": [
+      "import React, { Component } from 'react'",
+      "",
+      "class ${1:${TM_FILENAME_BASE}} extends Component {",
+      "  render() {",
+      "    return $2",
+      "  }",
+      "}",
+      "",
+      "export default $1",
+      ""
+    ],
+    "description": "react class component"
+  },
+  "class constructor": {
+    "prefix": "cc",
+    "body": ["constructor(${1:props}) {", "  super($1)", "  $2", "}", ""],
+    "description": "class constructor"
+  },
+  "class render": {
+    "prefix": "cr",
+    "body": ["render() {", "  return $1", "}"],
+    "description": "class render"
+  },
+  "class componentWillMount": {
+    "prefix": "cwm",
+    "body": ["componentWillMount() {", "  $1", "}", ""],
+    "description": "class componentWillMount"
+  },
+  "class componentDidMount": {
+    "prefix": "cdm",
+    "body": ["componentDidMount() {", "  $1", "}", ""],
+    "description": "class componentDidMount"
+  },
+  "class componentWillReceiveProps": {
+    "prefix": "crp",
+    "body": ["componentWillReceiveProps(${1:nextProps}) {", "  $2", "}", ""],
+    "description": "class componentWillReceiveProps"
+  },
+  "class shouldComponentUpdate": {
+    "prefix": "csu",
+    "body": [
+      "shouldComponentUpdate(${2:nextProps}${1:, nextState}) {",
+      "  return $3",
+      "}",
+      ""
+    ],
+    "description": "class shouldComponentUpdate"
+  },
+  "class componentWillUpdate": {
+    "prefix": "cwu",
+    "body": [
+      "componentWillUpdate(${2:nextProps}${1:, nextState}) {",
+      "  $3",
+      "}",
+      ""
+    ],
+    "description": "class componentWillUpdate"
+  },
+  "class componentDidUpdate": {
+    "prefix": "cdu",
+    "body": [
+      "componentDidUpdate(${1:prevProps}${2:, prevState}) {",
+      "  $3",
+      "}",
+      ""
+    ],
+    "description": "class componentDidUpdate"
+  },
+  "class componentWillUnmount": {
+    "prefix": "cum",
+    "body": ["componentWillUnmount() {", "  $1", "}", ""],
+    "description": "class componentWillUnmount"
+  },
+  "class componentDidCatch": {
+    "prefix": "cdc",
+    "body": ["componentDidCatch(${2:error}${1:, info}) {", "  $3", "}", ""],
+    "description": "class componentDidCatch"
+  },
+  "class this.props": {
+    "prefix": "cp",
+    "body": ["this.props"],
+    "description": "class this.props"
+  },
+  "class this.state": {
+    "prefix": "cs",
+    "body": ["this.state"],
+    "description": "class this.state"
+  },
+  "class this.setState": {
+    "prefix": "css",
+    "body": [
+      "this.setState(${3:(${5:prevState}${4:, props}) => ($6)}${1:, () => ($2)})"
+    ],
+    "description": "class this.setState"
+  },
+  "class default state": {
+    "prefix": "cds",
+    "body": ["${1:this.}state = {$2}"],
+    "description": "class default state"
+  },
+  "class static defaultProps": {
+    "prefix": "cdp",
+    "body": ["${1:static }defaultProps = {$2}"],
+    "description": "class static defaultProps"
+  },
+  "class handler arrow function": {
+    "prefix": "ch",
+    "body": ["${2:handler} = (${1:event}) => $3"],
+    "description": "class handler arrow function"
+  },
+  "export default arrow function": {
+    "prefix": "edf",
+    "body": ["export default ($1) => $2"],
+    "description": "export default arrow function"
   }
 }
