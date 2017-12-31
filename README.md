@@ -49,9 +49,16 @@ Below is a list of all available snippets and the triggers of each one. The
 
 ### Other
 
-| Trigger | Content                       | Description             |
-| ------: | ----------------------------- | ----------------------- |
-|   `edf` | export default arrow function | e = export, d = default |
+| Trigger | Content                               | Description             |
+| ------: | ------------------------------------- | ----------------------- |
+|   `ed→` | export default                        | e = export, d = default |
+|   `ec→` | export const                          | c = const               |
+|  `edf→` | export default arrow function         |                         |
+|  `ixp→` | import Provider for react-redux       | x = react-redux         |
+|  `ixc→` | import createStore other for redux    | x = redux               |
+|  `ixr→` | import combineReducers for redux      | r = combineReducers     |
+|  `rxa→` | redux action generator arrow function | a = action              |
+|  `rxr→` | redux reduce arrow function           | r = reduce              |
 
 ## Reference
 

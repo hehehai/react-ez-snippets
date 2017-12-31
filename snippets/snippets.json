@@ -1,17 +1,17 @@
 {
   "import React": {
     "prefix": "ir",
-    "body": ["import React from 'react'", ""],
+    "body": ["import React from 'react'"],
     "description": "import React"
   },
   "import React and Component": {
     "prefix": "irc",
-    "body": ["import React, { Component } from 'react'", ""],
+    "body": ["import React, { Component } from 'react'"],
     "description": "import React and Component"
   },
   "import React and PureComponent": {
     "prefix": "irp",
-    "body": ["import React, { PureComponent } from 'react'", ""],
+    "body": ["import React, { PureComponent } from 'react'"],
     "description": "import React and PureComponent"
   },
   "react function component": {
@@ -19,7 +19,7 @@
     "body": [
       "import React from 'react'",
       "",
-      "const ${1:${TM_FILENAME_BASE}} = () => $2",
+      "const ${1:${TM_FILENAME_BASE}} = (${2:props}) => $0",
       "",
       "export default $1",
       ""
@@ -33,7 +33,7 @@
       "",
       "class ${1:${TM_FILENAME_BASE}} extends Component {",
       "  render() {",
-      "    return $2",
+      "    return $0",
       "  }",
       "}",
       "",
@@ -44,34 +44,34 @@
   },
   "class constructor": {
     "prefix": "cc",
-    "body": ["constructor(${1:props}) {", "  super($1)", "  $2", "}", ""],
+    "body": ["constructor(${1:props}) {", "  super($1)", "  $0", "}", ""],
     "description": "class constructor"
   },
   "class render": {
     "prefix": "cr",
-    "body": ["render() {", "  return $1", "}"],
+    "body": ["render() {", "  return $0", "}"],
     "description": "class render"
   },
   "class componentWillMount": {
     "prefix": "cwm",
-    "body": ["componentWillMount() {", "  $1", "}", ""],
+    "body": ["componentWillMount() {", "  $0", "}", ""],
     "description": "class componentWillMount"
   },
   "class componentDidMount": {
     "prefix": "cdm",
-    "body": ["componentDidMount() {", "  $1", "}", ""],
+    "body": ["componentDidMount() {", "  $0", "}", ""],
     "description": "class componentDidMount"
   },
   "class componentWillReceiveProps": {
     "prefix": "crp",
-    "body": ["componentWillReceiveProps(${1:nextProps}) {", "  $2", "}", ""],
+    "body": ["componentWillReceiveProps(${1:nextProps}) {", "  $0", "}", ""],
     "description": "class componentWillReceiveProps"
   },
   "class shouldComponentUpdate": {
     "prefix": "csu",
     "body": [
       "shouldComponentUpdate(${2:nextProps}${1:, nextState}) {",
-      "  return $3",
+      "  return $0",
       "}",
       ""
     ],
@@ -81,7 +81,7 @@
     "prefix": "cwu",
     "body": [
       "componentWillUpdate(${2:nextProps}${1:, nextState}) {",
-      "  $3",
+      "  $0",
       "}",
       ""
     ],
@@ -91,7 +91,7 @@
     "prefix": "cdu",
     "body": [
       "componentDidUpdate(${1:prevProps}${2:, prevState}) {",
-      "  $3",
+      "  $0",
       "}",
       ""
     ],
@@ -99,12 +99,12 @@
   },
   "class componentWillUnmount": {
     "prefix": "cum",
-    "body": ["componentWillUnmount() {", "  $1", "}", ""],
+    "body": ["componentWillUnmount() {", "  $0", "}", ""],
     "description": "class componentWillUnmount"
   },
   "class componentDidCatch": {
     "prefix": "cdc",
-    "body": ["componentDidCatch(${2:error}${1:, info}) {", "  $3", "}", ""],
+    "body": ["componentDidCatch(${2:error}${1:, info}) {", "  $0", "}", ""],
     "description": "class componentDidCatch"
   },
   "class this.props": {
@@ -120,7 +120,7 @@
   "class this.setState object": {
     "prefix": "cso",
     "body": ["this.setState({$2}${1:, () => ()})"],
-    "description": "object"
+    "description": "class this.setState object"
   },
   "class this.setState function": {
     "prefix": "csf",
@@ -131,22 +131,69 @@
   },
   "class default state": {
     "prefix": "cds",
-    "body": ["${1:this.}state = {$2}"],
+    "body": ["${1:this.}state = {$0}", ""],
     "description": "class default state"
   },
   "class static defaultProps": {
     "prefix": "cdp",
-    "body": ["${1:static }defaultProps = {$2}"],
+    "body": ["${1:static }defaultProps = {$0}", ""],
     "description": "class static defaultProps"
   },
   "class handler arrow function": {
     "prefix": "ch",
-    "body": ["${2:handler} = (${1:event}) => $3"],
+    "body": ["${2:handler} = (${1:event}) => $0", ""],
     "description": "class handler arrow function"
+  },
+  "export default": {
+    "prefix": "ed",
+    "body": ["export default $0"],
+    "description": "export default"
+  },
+  "export const": {
+    "prefix": "ec",
+    "body": ["export const $1 = ${0:${1:CONST}}"],
+    "description": "export const"
   },
   "export default arrow function": {
     "prefix": "edf",
-    "body": ["export default ($1) => $2"],
+    "body": ["export default ($1) => $0", ""],
     "description": "export default arrow function"
+  },
+  "import Provider for react-redux": {
+    "prefix": "ixp",
+    "body": ["import { Provider } from 'react-redux'"],
+    "description": "import Provider for react-redux"
+  },
+  "import createStore other for redux": {
+    "prefix": "ixc",
+    "body": [
+      "import { createStore${2:, applyMiddleware}${1:, compose} } from 'redux'"
+    ],
+    "description": "import createStore other for redux"
+  },
+  "import combineReducers for redux": {
+    "prefix": "ixr",
+    "body": ["import { combineReducers } from 'redux'"],
+    "description": "import combineReducers for redux"
+  },
+  "redux action generator arrow function": {
+    "prefix": "rxa",
+    "body": ["export const ${1:action} = (${2:data}) => $0", ""],
+    "description": "redux action generator arrow function"
+  },
+  "redux reduce arrow function": {
+    "prefix": "rxr",
+    "body": [
+      "export default (state = {}, action) => {",
+      "  switch(action.type) {",
+      "    case ${1:TYPE}:",
+      "      return $0",
+      "    default:",
+      "      return state",
+      "  }",
+      "}",
+      ""
+    ],
+    "description": "redux reduce arrow function"
   }
 }
